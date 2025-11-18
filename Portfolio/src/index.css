@@ -13,6 +13,10 @@
     @apply hover:bg-black ease-in-out
   }
 
+  .circle {
+    @apply h-[24px] w-[24px] rounded-[24px] bg-black absolute top-0 left-
+  }
+
 
 html {
   scroll-behavior: smooth;
