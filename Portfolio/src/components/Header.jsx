@@ -16,7 +16,7 @@ const itemVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 }
 
-const Header = () => {
+const Header = ({ heroRef, aboutMeRef, projectsRef }) => {
 
     const [lastScroll, setLastScroll] = useState(0);
     const [show, setShow] = useState(false);
@@ -33,7 +33,19 @@ const Header = () => {
         }
         window.addEventListener("scroll", handleScroll);
         return () => window.addEventListener("scroll", handleScroll)
-    }, [lastScroll])
+    }, [lastScroll]);
+
+    const scrollToHero = () => {
+        heroRef.current.scrollIntoView({ behavior: "smooth" })
+    }
+
+     const scrollToAboutMe = () => {
+        aboutMeRef.current.scrollIntoView({ behavior: "smooth" })
+    }
+
+     const scrollToProjects = () => {
+        projectsRef.current.scrollIntoView({ behavior: "smooth" })
+    }
 
   return (
     <motion.section className='w-full h-[100px] fixed top-0 z-50 bg-[#2563EB]' 
@@ -42,18 +54,20 @@ const Header = () => {
         <div className='w-full bg-[#2563EB] h-[100px] '>
             <div className='w-full h-[100px] flex justify-between px-50 py-5'>
                 <div  className='flex w-[50%] gap-8 items-center' >
-          <a href="" className='text-2xl font-extrabold text-[#F9FAFB] hover:text-[#1F1F1F] duration-100 ease-in-out' >
+          <a className='text-2xl font-extrabold text-[#F9FAFB] hover:text-[#1F1F1F] duration-100 ease-in-out cursor-pointer'
+          onClick={() => scrollToAboutMe()} >
             About Me
           </a>
-          <a href="" className='text-2xl font-extrabold text-[#F9FAFB] hover:text-[#1F1F1F] duration-100 ease-in-out ' >
+          <a className='text-2xl font-extrabold text-[#F9FAFB] hover:text-[#1F1F1F] duration-100 ease-in-out cursor-pointer '
+          onClick={() => scrollToProjects()} >
             Projects
           </a>
-          <a href="" className='text-2xl font-extrabold text-[#F9FAFB] hover:text-[#1F1F1F] duration-100 ease-in-out'>
+          <a href="" className='text-2xl font-extrabold text-[#F9FAFB] hover:text-[#1F1F1F] duration-100 ease-in-out cursor-pointer'>
             Skills/Tech Stacks
           </a>
         </div>
         <div className='border p-3 bg-[#1F1F1F] border-[#F9FAFB] rounded-sm header-btn-hover-contact'>
-          <a href="" className='text-2xl font-extrabold text-[#F9FAFB]' >
+          <a className='text-2xl font-extrabold text-[#F9FAFB]' >
             Contact Me
           </a>
         </div>
@@ -68,13 +82,15 @@ const Header = () => {
           initial="hidden"
           animate="visible"
         >
-          <motion.a href="" className='text-2xl font-extrabold text-[#1F1F1F] header-btn-hover' variants={itemVariants}>
+          <motion.a  className='text-2xl font-extrabold text-[#1F1F1F] header-btn-hover cursor-pointer' variants={itemVariants}
+          onClick={() => scrollToAboutMe()}>
             About Me
           </motion.a>
-          <motion.a href="" className='text-2xl font-extrabold text-[#1F1F1F] header-btn-hover' variants={itemVariants}>
+          <motion.a className='text-2xl font-extrabold text-[#1F1F1F] header-btn-hover cursor-pointer' variants={itemVariants}
+          onClick={() => scrollToProjects()}>
             Projects
           </motion.a>
-          <motion.a href="" className='text-2xl font-extrabold text-[#1F1F1F] header-btn-hover' variants={itemVariants}>
+          <motion.a className='text-2xl font-extrabold text-[#1F1F1F] header-btn-hover cursor-pointer' variants={itemVariants}>
             Skills/Tech Stacks
           </motion.a>
         </motion.div>
@@ -82,7 +98,7 @@ const Header = () => {
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.6, ease: "easeOut"}}>
-          <motion.a href="" className='text-2xl font-extrabold text-[#F9FAFB]' >
+          <motion.a className='text-2xl font-extrabold text-[#F9FAFB]' >
             Contact Me
           </motion.a>
         </motion.div>

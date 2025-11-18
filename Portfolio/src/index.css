@@ -12,3 +12,8 @@
   .header-btn-hover-contact {
     @apply hover:bg-black ease-in-out
   }
+
+
+html {
+  scroll-behavior: smooth;
+}
