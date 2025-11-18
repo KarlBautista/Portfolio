@@ -4,3 +4,11 @@
 * {
   font-family: "Inter", sans-serif;
 }
+
+ .header-btn-hover {
+     @apply hover:text-[#2563EB]  ease-in-out
+  }
+
+  .header-btn-hover-contact {
+    @apply hover:bg-black ease-in-out
+  }

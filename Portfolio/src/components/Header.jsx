@@ -27,17 +27,17 @@ const Header = () => {
           initial="hidden"
           animate="visible"
         >
-          <motion.a href="" className='text-2xl font-extrabold text-[#1F1F1F]' variants={itemVariants}>
+          <motion.a href="" className='text-2xl font-extrabold text-[#1F1F1F] header-btn-hover' variants={itemVariants}>
             About Me
           </motion.a>
-          <motion.a href="" className='text-2xl font-extrabold text-[#1F1F1F]' variants={itemVariants}>
+          <motion.a href="" className='text-2xl font-extrabold text-[#1F1F1F] header-btn-hover' variants={itemVariants}>
             Projects
           </motion.a>
-          <motion.a href="" className='text-2xl font-extrabold text-[#1F1F1F]' variants={itemVariants}>
+          <motion.a href="" className='text-2xl font-extrabold text-[#1F1F1F] header-btn-hover' variants={itemVariants}>
             Skills/Tech Stacks
           </motion.a>
         </motion.div>
-        <motion.div className='border p-3 bg-[#2563EB] border-[#F9FAFB] rounded-sm'
+        <motion.div className='border p-3 bg-[#2563EB] border-[#F9FAFB] rounded-sm header-btn-hover-contact'
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.6, ease: "easeOut"}}>
