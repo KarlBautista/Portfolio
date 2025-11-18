@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import HeaderTop from './HeaderTop'
 import { motion } from 'framer-motion'
 
@@ -17,9 +17,50 @@ const itemVariants = {
 }
 
 const Header = () => {
+
+    const [lastScroll, setLastScroll] = useState(0);
+    const [show, setShow] = useState(false);
+    
+    useEffect(() => {
+    const handleScroll = () => {
+            const currentScroll = window.scrollY;
+            if(currentScroll > 100) {
+                setShow(true);
+            } else {
+                setShow(false);
+            }
+            setLastScroll(currentScroll)
+        }
+        window.addEventListener("scroll", handleScroll);
+        return () => window.addEventListener("scroll", handleScroll)
+    }, [lastScroll])
+
   return (
-    <section className='w-full h-[100px] '>
-      <HeaderTop />
+    <motion.section className='w-full h-[100px] fixed top-0 z-50 bg-[#2563EB]' 
+        animate={{ y: show ? 0 : -120 }}
+        transition={{ type: "spring", stiffness: 300, damping: 30 }}>
+        <div className='w-full bg-[#2563EB] h-[100px] '>
+            <div className='w-full h-[100px] flex justify-between px-50 py-5'>
+                <div  className='flex w-[50%] gap-8 items-center' >
+          <a href="" className='text-2xl font-extrabold text-[#F9FAFB] hover:text-[#1F1F1F] duration-100 ease-in-out' >
+            About Me
+          </a>
+          <a href="" className='text-2xl font-extrabold text-[#F9FAFB] hover:text-[#1F1F1F] duration-100 ease-in-out ' >
+            Projects
+          </a>
+          <a href="" className='text-2xl font-extrabold text-[#F9FAFB] hover:text-[#1F1F1F] duration-100 ease-in-out'>
+            Skills/Tech Stacks
+          </a>
+        </div>
+        <div className='border p-3 bg-[#1F1F1F] border-[#F9FAFB] rounded-sm header-btn-hover-contact'>
+          <a href="" className='text-2xl font-extrabold text-[#F9FAFB]' >
+            Contact Me
+          </a>
+        </div>
+      </div>
+        </div>
+        {!show &&  <HeaderTop /> }
+    {!show &&
       <div className='w-full h-[100px] flex justify-between px-50 py-5'>
         <motion.div
           className='flex w-[50%] gap-8'
@@ -46,7 +87,10 @@ const Header = () => {
           </motion.a>
         </motion.div>
       </div>
-    </section>
+}
+   
+     
+    </motion.section>
   )
 }
 
