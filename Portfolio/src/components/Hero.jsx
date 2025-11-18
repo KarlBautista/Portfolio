@@ -5,7 +5,7 @@ import { easeOut, motion } from 'framer-motion'
 
 const Hero = () => {
   return (
-    <div className='w-full h-[90vh] flex justify-center items-center font-extrabold'>
+    <div className='w-full h-[98vh] flex justify-center items-center font-extrabold'>
         <div className='w-[60%] h-[50%] flex p-5 justify-center gap-4'>
             <motion.div className='w-[60%] h-full flex flex-col justify-center gap-5 '
                         initial={{ opacity: 0, x: -150 }}
