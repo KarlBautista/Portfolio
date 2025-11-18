@@ -2,7 +2,7 @@ import React from 'react'
 import { Typewriter } from 'react-simple-typewriter'
 const HeroTitle = () => {
   return (
-    <h1 className='text-5xl font-bold'>
+    <h1 className='text-5xl font-extrabold text-[#2563EB]'>
         <Typewriter 
             words={["Hello, I'm Karl Bautista"]}
             loop
@@ -11,6 +11,7 @@ const HeroTitle = () => {
             typeSpeed={60}
             deleteSpeed={40}
             delaySpeed={1200}
+            className=""
         
         />
     </h1>
