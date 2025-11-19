@@ -4,18 +4,21 @@ import Header from './components/Header'
 import AboutMe from './components/AboutMe'
 import Projects from './components/Projects'
 import CursorFollower from './components/CursorFollower'
+import Skills from './components/Skills'
 const App = () => {
   const heroRef = useRef(null);
   const aboutMeRef = useRef(null);
   const projectsRef = useRef(null);
   const skillsRef = useRef(null);
+
   return (
     <div className='h-auto w-full bg-[#F9FAFB] scroll-smooth'>
         <CursorFollower />
-        <Header heroRef={heroRef} aboutMeRef={aboutMeRef} projectsRef={projectsRef} />
+        <Header heroRef={heroRef} aboutMeRef={aboutMeRef} projectsRef={projectsRef} skillsRef={skillsRef}/>
         <Hero heroRef={heroRef} />
         <AboutMe aboutMeRef={aboutMeRef}/>
         <Projects projectsRef={projectsRef} />
+        <Skills SkillsRef={skillsRef}/>
     </div>
   )
 }

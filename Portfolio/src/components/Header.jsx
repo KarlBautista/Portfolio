@@ -16,7 +16,7 @@ const itemVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 }
 
-const Header = ({ heroRef, aboutMeRef, projectsRef }) => {
+const Header = ({ heroRef, aboutMeRef, projectsRef, skillsRef }) => {
 
     const [lastScroll, setLastScroll] = useState(0);
     const [show, setShow] = useState(false);
@@ -47,6 +47,10 @@ const Header = ({ heroRef, aboutMeRef, projectsRef }) => {
         projectsRef.current.scrollIntoView({ behavior: "smooth" })
     }
 
+     const scrollToSkills = () => {
+        skillsRef.current.scrollIntoView({ behavior: "smooth" })
+    }
+
   return (
     <motion.section className='w-full h-[100px] fixed top-0 z-50 bg-[#2563EB]' 
         animate={{ y: show ? 0 : -120 }}
@@ -62,7 +66,8 @@ const Header = ({ heroRef, aboutMeRef, projectsRef }) => {
           onClick={() => scrollToProjects()} >
             Projects
           </a>
-          <a href="" className='text-2xl font-extrabold text-[#F9FAFB] hover:text-[#1F1F1F] duration-100 ease-in-out cursor-pointer'>
+          <a  className='text-2xl font-extrabold text-[#F9FAFB] hover:text-[#1F1F1F] duration-100 ease-in-out cursor-pointer'
+          onClick={() => scrollToSkills()}>
             Skills/Tech Stacks
           </a>
         </div>
@@ -90,7 +95,8 @@ const Header = ({ heroRef, aboutMeRef, projectsRef }) => {
           onClick={() => scrollToProjects()}>
             Projects
           </motion.a>
-          <motion.a className='text-2xl font-extrabold text-[#1F1F1F] header-btn-hover cursor-pointer' variants={itemVariants}>
+          <motion.a className='text-2xl font-extrabold text-[#1F1F1F] header-btn-hover cursor-pointer' variants={itemVariants}
+          onClick={() => scrollToSkills()}>
             Skills/Tech Stacks
           </motion.a>
         </motion.div>

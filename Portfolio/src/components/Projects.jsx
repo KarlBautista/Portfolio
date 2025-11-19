@@ -11,18 +11,16 @@ const Projects = ({ projectsRef }) => {
 
     const controls = useAnimation();
     const { ref: inViewRef, inView } = useInView({
-            threshold: 0.5
+            threshold: 0.3
     })
     useEffect(() => {
         if(inView) {
             controls.start("visible")
-        } else {
-            controls.start("hidden");
-        }
+        } 
     }, [inView, controls]);
 
   return (
-        <section id="projects" className='w-full h-[50vh] bg-[#F9FAFB] flex justify-center scroll-mt-24' ref={projectsRef}>
+        <section id="projects" className='w-full h-auto bg-[#F9FAFB] flex justify-center scroll-mt-24' ref={projectsRef}>
         <div className='w-[70%] h-full'>
             <motion.h1 className='text-4xl p-5 font-extrabold text-[#2563EB]'
             variants={{ hidden: { opacity: 0, y: -150 }, visible: { opacity: 1, y: 0}}}
