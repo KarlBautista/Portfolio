@@ -16,7 +16,7 @@ const itemVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 }
 
-const Header = ({ heroRef, aboutMeRef, projectsRef, skillsRef }) => {
+const Header = ({ heroRef, aboutMeRef, projectsRef, certificationsRef }) => {
 
     const [lastScroll, setLastScroll] = useState(0);
     const [show, setShow] = useState(false);
@@ -47,8 +47,8 @@ const Header = ({ heroRef, aboutMeRef, projectsRef, skillsRef }) => {
         projectsRef.current.scrollIntoView({ behavior: "smooth" })
     }
 
-     const scrollToSkills = () => {
-        skillsRef.current.scrollIntoView({ behavior: "smooth" })
+     const scrollToCertifications = () => {
+        certificationsRef.current.scrollIntoView({ behavior: "smooth" })
     }
 
   return (
@@ -67,8 +67,8 @@ const Header = ({ heroRef, aboutMeRef, projectsRef, skillsRef }) => {
             Projects
           </a>
           <a  className='text-2xl font-extrabold text-[#F9FAFB] hover:text-[#1F1F1F] duration-100 ease-in-out cursor-pointer'
-          onClick={() => scrollToSkills()}>
-            Skills/Tech Stacks
+          onClick={() => scrollToCertifications()}>
+            Certifications
           </a>
         </div>
         <div className='border p-3 bg-[#1F1F1F] border-[#F9FAFB] rounded-sm header-btn-hover-contact'>
@@ -96,8 +96,8 @@ const Header = ({ heroRef, aboutMeRef, projectsRef, skillsRef }) => {
             Projects
           </motion.a>
           <motion.a className='text-2xl font-extrabold text-[#1F1F1F] header-btn-hover cursor-pointer' variants={itemVariants}
-          onClick={() => scrollToSkills()}>
-            Skills/Tech Stacks
+          onClick={() => scrollToCertifications()}>
+            Certifications
           </motion.a>
         </motion.div>
         <motion.div className='border p-3 bg-[#2563EB] border-[#F9FAFB] rounded-sm header-btn-hover-contact'
