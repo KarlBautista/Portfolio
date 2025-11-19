@@ -14,16 +14,17 @@ const App = () => {
   const projectsRef = useRef(null);
   const skillsRef = useRef(null);
   const certificationsRef = useRef(null);
+  const contactMeRef = useRef(null);
 
   return (
     <div className='h-auto w-full bg-[#F9FAFB] scroll-smooth'>
         <CursorFollower />
-        <Header heroRef={heroRef} aboutMeRef={aboutMeRef} projectsRef={projectsRef} certificationsRef={certificationsRef}/>
+        <Header heroRef={heroRef} aboutMeRef={aboutMeRef} projectsRef={projectsRef} certificationsRef={certificationsRef} contactMeRef={contactMeRef}/>
         <Hero heroRef={heroRef} />
         <AboutMe aboutMeRef={aboutMeRef}/>
         <Projects projectsRef={projectsRef} />
         <Certificiations certificationsRef={certificationsRef}/>
-        <ContactMe />
+        <ContactMe contactMeRef={contactMeRef}/>
         <Footer />
     </div>
   )

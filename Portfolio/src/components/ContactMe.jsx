@@ -1,12 +1,29 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { motion, useAnimation } from 'framer-motion'; 
+import { useInView } from 'react-intersection-observer';
+const ContactMe = ({ contactMeRef }) => {
 
-const ContactMe = () => {
+    const controls = useAnimation();
+    const { ref: inViewRef, inView } = useInView({
+        threshold: 0.3
+    })
+    useEffect(() => {
+        if (inView) {
+            controls.start("visible");
+        }
+    }, [inView, controls])
+
     const handleOnSubmit = (e) => {
         e.preventDefault();
     }
   return (
-    <section className='w-full h-auto bg-[#0b0f19] border-t-5 flex justify-center py-5'>
-        <div className='w-[50%] h-full shadow-xl border-5 border-[#F9FAFB] rounded-lg py-5'>
+    <section className='w-full h-auto bg-[#0b0f19] border-t-5 flex justify-center py-5' ref={contactMeRef}>
+        <motion.div className='w-[50%] h-full shadow-xl border-5 border-[#F9FAFB] rounded-lg py-5'
+        ref={inViewRef}
+        variants={{ visible: { opacity: 1, y: 0 }, hidden: { opacity: 0, y: 150}}}
+        animate={controls}
+        initial="hidden"
+        transition={{ duration: 0.2, ease: "easeOut"}}>
             <h1 className='text-3xl font-extrabold px-10 py-5 text-[#F9FAFB]'>Contact Me</h1>
             <form onSubmit={handleOnSubmit} className='px-10'>
                 <div className='flex gap-5'>
@@ -28,9 +45,8 @@ const ContactMe = () => {
                     <button className='bg-[#2563EB] px-10 py-2 text-[#F9FAFB] font-semibold rounded-sm cursor-pointer'>Send</button>
                     <p className='font-semibold cursor-pointer text-[#F9FAFB]'>or send me through gmail</p>
                </div>
-
             </form>
-        </div>
+        </motion.div>
     </section>
   )
 }

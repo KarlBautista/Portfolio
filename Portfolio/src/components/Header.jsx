@@ -16,7 +16,7 @@ const itemVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 }
 
-const Header = ({ heroRef, aboutMeRef, projectsRef, certificationsRef }) => {
+const Header = ({ heroRef, aboutMeRef, projectsRef, certificationsRef, contactMeRef }) => {
 
     const [lastScroll, setLastScroll] = useState(0);
     const [show, setShow] = useState(false);
@@ -51,6 +51,11 @@ const Header = ({ heroRef, aboutMeRef, projectsRef, certificationsRef }) => {
         certificationsRef.current.scrollIntoView({ behavior: "smooth" })
     }
 
+     const scrollToContactMe = () => {
+        contactMeRef.current.scrollIntoView({ behavior: "smooth" })
+    }
+
+
   return (
     <motion.section className='w-full h-[100px] fixed top-0 z-50 bg-[#2563EB]' 
         animate={{ y: show ? 0 : -120 }}
@@ -72,7 +77,8 @@ const Header = ({ heroRef, aboutMeRef, projectsRef, certificationsRef }) => {
           </a>
         </div>
         <div className='border p-3 bg-[#1F1F1F] border-[#F9FAFB] rounded-sm header-btn-hover-contact'>
-          <a className='text-2xl font-extrabold text-[#F9FAFB]' >
+          <a className='text-2xl font-extrabold text-[#F9FAFB] cursor-pointer' 
+          onClick={() => scrollToContactMe()}>
             Contact Me
           </a>
         </div>
@@ -104,7 +110,8 @@ const Header = ({ heroRef, aboutMeRef, projectsRef, certificationsRef }) => {
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.6, ease: "easeOut"}}>
-          <motion.a className='text-2xl font-extrabold text-[#F9FAFB]' >
+          <motion.a className='text-2xl font-extrabold text-[#F9FAFB] cursor-pointer' 
+          onClick={() => scrollToContactMe()}>
             Contact Me
           </motion.a>
         </motion.div>
