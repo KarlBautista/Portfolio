@@ -57,7 +57,7 @@ const CertCarousel = () => {
             <img
                 src={c.src}
                 alt={`Certificate ${index + 1}`}
-                className="rounded-lg shadow-lg w-full max-h-[450px] object-contain cursor-pointer hover:border-5 hover:border-[#2563EB]"
+                className="rounded-lg shadow-lg w-full max-h-[450px] object-contain transform duration-75 cursor-pointer hover:border-5 hover:border-[#2563EB]"
                 onClick={() => window.open(c.url, "_blank")}
                 title={c.url}
             />
