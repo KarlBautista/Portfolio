@@ -18,7 +18,7 @@ const Certificiations = ({ certificationsRef }) => {
 
 
   return (
-    <section className='w-full h-auto  flex justify-center bg-[#111827] py-10' ref={certificationsRef}> 
+    <section className='w-full h-auto  flex justify-center bg-[#111827] py-10 scroll-mt-38' ref={certificationsRef}> 
             <motion.div className='w-[75%] h-full flex flex-col p-5 items-center gap-5'
             ref={inViewRef}
             variants={{

@@ -6,6 +6,7 @@ import Projects from './components/Projects'
 import CursorFollower from './components/CursorFollower'
 import Skills from './components/Skills'
 import Certificiations from './components/Certificiations'
+import ContactMe from './components/ContactMe'
 const App = () => {
   const heroRef = useRef(null);
   const aboutMeRef = useRef(null);
@@ -21,6 +22,7 @@ const App = () => {
         <AboutMe aboutMeRef={aboutMeRef}/>
         <Projects projectsRef={projectsRef} />
         <Certificiations certificationsRef={certificationsRef}/>
+        <ContactMe />
     </div>
   )
 }

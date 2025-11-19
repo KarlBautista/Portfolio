@@ -16,7 +16,7 @@ const AboutMe = ({ aboutMeRef }) => {
 
 
   return (
-    <section className='w-full h-[50vh] bg-[#111827] flex justify-center scroll-mt-24' ref={aboutMeRef}>
+    <section className='w-full h-[50vh] bg-[#111827] flex justify-center scroll-mt-60' ref={aboutMeRef}>
         <motion.div className='w-[70%] h-full py-10 px-5 flex flex-col gap-5 items-center justify-center' 
          ref={inViewRef}
         variants={{
