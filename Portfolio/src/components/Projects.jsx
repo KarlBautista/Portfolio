@@ -7,6 +7,7 @@ import { useInView } from 'react-intersection-observer'
 import  { motion, useAnimation } from "framer-motion"
 import ReactJS from "../assets/react.svg"
 
+
 const Projects = ({ projectsRef }) => {    
 
     const controls = useAnimation();
@@ -29,19 +30,20 @@ const Projects = ({ projectsRef }) => {
             transition={{ duration: 0.6, ease: "easeOut"}}>Projects</motion.h1>
             
             <div className=' w-full h-full flex flex-wrap gap-5 justify-center' ref={inViewRef}>
-               <motion.a className='w-[45%] h-full backdrop-blur-md border-5 shadow-xl rounded-2xl p-4 transform'
+               <motion.a className='w-[45%] h-auto md:h-[520px] min-h-[480px] flex flex-col justify-between backdrop-blur-md border-5 border-[#111827] hover:border-[#2563EB] shadow-xl rounded-2xl p-4 transform transition-transform duration-300 ease-out hover:-translate-y-2 hover:shadow-2xl group
+               
+               '
                href='https://recipefinder-gamma.vercel.app/'
-               target='_blank'
-                whileHover={{ scale: 1.05, zIndex: 10, borderColor: "#2563EB", margin: "0.5rem" }} 
+               target='_blank' rel='noreferrer'
                variants={{
                     visible:  { opacity: 1, x:0 },
                     hidden: { opacity: 0, x:-150 }
                }}
                animate={controls}
                initial="hidden"
-               transition={{ duration: 0.6, ease: "easeOut"}}>
+               transition={{ duration: 0.2, ease: "easeOut"}}>
                 
-                    <div className='w-full h-[50%] rounded-xl overflow-hidden'>
+                    <div className='w-full rounded-xl overflow-hidden h-1/2 md:h-[52%]'>
                         <img src={RecipeFinder} alt="" className='w-full h-full object-cover' />
                     </div>
                     <div className='flex flex-col gap-5 items-center'>
@@ -63,19 +65,18 @@ const Projects = ({ projectsRef }) => {
                 </motion.a>
                 
 
-            <motion.a className='w-[45%] h-full backdrop-blur-md border-5 shadow-xl rounded-2xl p-4'
-               href='https://defineit-nu.vercel.app/'
-               target='_blank'
-                whileHover={{ scale: 1.05, zIndex: 10, borderColor: "#2563EB", margin: "0.5rem" }} 
+                <motion.a className='w-[45%] h-auto md:h-[520px] min-h-[480px] flex flex-col justify-between backdrop-blur-md border-5 border-[#111827] hover:border-[#2563EB]  shadow-xl rounded-2xl p-4 transform transition-transform duration-300 ease-out hover:-translate-y-2 hover:shadow-2xl group'
+                    href='https://defineit-nu.vercel.app/'
+                    target='_blank' rel='noreferrer'
                variants={{
                     visible:  { opacity: 1, x:0 },
                     hidden: { opacity: 0, x: 150 }
                }}
                animate={controls}
                initial="hidden"
-               transition={{ duration: 0.6, ease: "easeOut"}}>
+               transition={{ duration: 0.2, ease: "easeOut"}}>
                 
-                    <div className='w-full h-[50%] rounded-xl overflow-hidden'>
+                    <div className='w-full rounded-xl overflow-hidden h-1/2 md:h-[52%]'>
                         <img src={DefineIt} alt="" className='w-full h-full object-cover' />
                     </div>
                     <div className='flex flex-col gap-5 items-center'>
@@ -98,10 +99,9 @@ const Projects = ({ projectsRef }) => {
                     </div>
                 </motion.a>
 
-            <motion.a className='w-[45%] h-full backdrop-blur-md border-5 shadow-xl rounded-2xl p-4'
+            <motion.a className='w-[45%] h-auto md:h-[520px] min-h-[480px] flex flex-col justify-between backdrop-blur-md border-5 border-[#111827] hover:border-[#2563EB]  shadow-xl rounded-2xl p-4 transform transition-transform duration-300 ease-out hover:-translate-y-2 hover:shadow-2xl group'
                 href='https://lakbayph.vercel.app/'
-                whileHover={{ scale: 1.05, zIndex: 10, borderColor: "#2563EB", margin: "0.5rem" }} 
-                target='_blank'
+                target='_blank' rel='noreferrer'
                variants={{
                     visible:  { opacity: 1, x:0 },
                     hidden: { opacity: 0, x:-150 }
@@ -110,7 +110,7 @@ const Projects = ({ projectsRef }) => {
                initial="hidden"
                transition={{ duration: 0.2, ease: "easeOut"}}>
                 
-                    <div className='w-full h-[50%] rounded-xl overflow-hidden'>
+                    <div className='w-full rounded-xl overflow-hidden h-1/2 md:h-[52%]'>
                         <img src={Lakbay} alt="" className='w-full h-full object-cover' />
                     </div>
                     <div className='flex flex-col gap-5 items-center'>
@@ -135,17 +135,16 @@ const Projects = ({ projectsRef }) => {
                     </div>
             </motion.a>
 
-            <motion.a className='w-[45%] h-full backdrop-blur-md border-5 shadow-xl rounded-2xl p-4 cursor-pointer'
-                whileHover={{ scale: 1.05, zIndex: 10, borderColor: "#2563EB", margin: "0.5rem" }} 
-               variants={{
+                <motion.a className='w-[45%] h-auto md:h-[520px] min-h-[480px] flex flex-col justify-between backdrop-blur-md border-5 border-[#111827] hover:border-[#2563EB]  shadow-xl rounded-2xl p-4 cursor-pointer transform transition-transform duration-300 ease-out hover:-translate-y-2 hover:shadow-2xl group'
+                    variants={{
                     visible:  { opacity: 1, x:0 },
                     hidden: { opacity: 0, x: 150 }
                }}
                animate={controls}
                initial="hidden"
-               transition={{ duration: 0.6, ease: "easeOut"}}>
+               transition={{ duration: 0.2, ease: "easeOut"}}>
                 
-                    <div className='w-full max-h-[50%] rounded-xl overflow-hidden'>
+                    <div className='w-full rounded-xl overflow-hidden h-1/2 md:h-[52%]'>
                         <img src={JAMarket} alt="" className='w-full h-full object-cover' />
                     </div>
                     <div className='flex flex-col gap-5 items-center'>
