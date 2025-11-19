@@ -29,10 +29,10 @@ const Projects = ({ projectsRef }) => {
             transition={{ duration: 0.6, ease: "easeOut"}}>Projects</motion.h1>
             
             <div className=' w-full h-full flex flex-wrap gap-5 justify-center' ref={inViewRef}>
-               <motion.a className='w-[45%] h-full backdrop-blur-md border-5 shadow-xl rounded-2xl p-4
-               transform'
+               <motion.a className='w-[45%] h-full backdrop-blur-md border-5 shadow-xl rounded-2xl p-4 transform'
                href='https://recipefinder-gamma.vercel.app/'
                target='_blank'
+                whileHover={{ scale: 1.05, zIndex: 10, borderColor: "#2563EB", margin: "0.5rem" }} 
                variants={{
                     visible:  { opacity: 1, x:0 },
                     hidden: { opacity: 0, x:-150 }
@@ -53,13 +53,10 @@ const Projects = ({ projectsRef }) => {
                            <p className='font-semibold'>Tech stack used: <span className='flex gap-3 items-center'>
                             <img src="https://cdn.simpleicons.org/react/61DAFB" alt="" className="w-[30px] h-[30px]" />
                             <img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript" title="JavaScript" className="w-[30px] h-[30px]" />
-                            <img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" alt="Tailwind CSS" title="Tailwind CSS" className="w-[30px] h-[30px]" />
+
                             <img src="https://cdn.simpleicons.org/css3/1572B6" alt="CSS3" className="w-[30px] h-[30px]" />
                             <img src="https://cdn.simpleicons.org/html5/E34F26" alt="HTML5" className="w-[30px] h-[30px]" />
-                            <img src="https://cdn.simpleicons.org/node.js/339933" alt="Node.js" className="w-[30px] h-[30px]" />
-                            <img src="https://cdn.simpleicons.org/express/000000" alt="Express" className="w-[30px] h-[30px]" />
-                            <img src="https://cdn.simpleicons.org/supabase/3ECF8E" alt="Supabase" className="w-[30px] h-[30px]" />
-                            <img src="https://cdn.simpleicons.org/vite/646CFF" alt="Vite" className="w-[30px] h-[30px]" />
+
                             </span></p>
                         </div>
                     </div>
@@ -69,6 +66,7 @@ const Projects = ({ projectsRef }) => {
             <motion.a className='w-[45%] h-full backdrop-blur-md border-5 shadow-xl rounded-2xl p-4'
                href='https://defineit-nu.vercel.app/'
                target='_blank'
+                whileHover={{ scale: 1.05, zIndex: 10, borderColor: "#2563EB", margin: "0.5rem" }} 
                variants={{
                     visible:  { opacity: 1, x:0 },
                     hidden: { opacity: 0, x: 150 }
@@ -84,18 +82,15 @@ const Projects = ({ projectsRef }) => {
                         <h1 className='text-3xl font-extrabold text-center mt-5 text-[#111827]'>
                         DefineIt
                         </h1>
-                        <p className='font-semibold'>DefineIt is an open-source web app that helps users look up word meanings, synonyms, and antonyms.</p>
+                        <p className='font-semibold text-center'>DefineIt is an open-source web app that helps users look up word meanings, synonyms, and antonyms.</p>
                         <div className=''>
-                           <p className='font-semibold'>Tech stack used: <span className='flex gap-3 items-center'>
+                           <p className='font-semibold text-center'>Tech stack used: <span className='flex gap-3 items-center'>
                                    <img src="https://cdn.simpleicons.org/react/61DAFB" alt="" className="w-[30px] h-[30px]" />
                             <img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript" title="JavaScript" className="w-[30px] h-[30px]" />
                             <img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" alt="Tailwind CSS" title="Tailwind CSS" className="w-[30px] h-[30px]" />
                             <img src="https://cdn.simpleicons.org/css3/1572B6" alt="CSS3" className="w-[30px] h-[30px]" />
                             <img src="https://cdn.simpleicons.org/html5/E34F26" alt="HTML5" className="w-[30px] h-[30px]" />
-                            <img src="https://cdn.simpleicons.org/node.js/339933" alt="Node.js" className="w-[30px] h-[30px]" />
-                            <img src="https://cdn.simpleicons.org/express/000000" alt="Express" className="w-[30px] h-[30px]" />
-                            <img src="https://cdn.simpleicons.org/supabase/3ECF8E" alt="Supabase" className="w-[30px] h-[30px]" />
-                            <img src="https://cdn.simpleicons.org/vite/646CFF" alt="Vite" className="w-[30px] h-[30px]" />
+                        
 
 
                             </span></p>
@@ -105,6 +100,7 @@ const Projects = ({ projectsRef }) => {
 
             <motion.a className='w-[45%] h-full backdrop-blur-md border-5 shadow-xl rounded-2xl p-4'
                 href='https://lakbayph.vercel.app/'
+                whileHover={{ scale: 1.05, zIndex: 10, borderColor: "#2563EB", margin: "0.5rem" }} 
                 target='_blank'
                variants={{
                     visible:  { opacity: 1, x:0 },
@@ -112,7 +108,7 @@ const Projects = ({ projectsRef }) => {
                }}
                animate={controls}
                initial="hidden"
-               transition={{ duration: 0.6, ease: "easeOut"}}>
+               transition={{ duration: 0.2, ease: "easeOut"}}>
                 
                     <div className='w-full h-[50%] rounded-xl overflow-hidden'>
                         <img src={Lakbay} alt="" className='w-full h-full object-cover' />
@@ -121,9 +117,9 @@ const Projects = ({ projectsRef }) => {
                         <h1 className='text-3xl font-extrabold text-center mt-5 text-[#111827]'>
                         LakbayPH
                         </h1>
-                        <p className='font-semibold'>LakbayPH is an open-source web app with an interactive map for exploring travel destinations across the Philippines.</p>
+                        <p className='font-semibold text-center'>LakbayPH is an open-source web app with an interactive map for exploring travel destinations across the Philippines.</p>
                         <div className=''>
-                           <p className='font-semibold'>Tech stack used: <span className='flex gap-3 items-center'>
+                           <p className='font-semibold text-center'>Tech stack used: <span className='flex gap-3 items-center'>
                                  <img src="https://cdn.simpleicons.org/react/61DAFB" alt="" className="w-[30px] h-[30px]" />
                             <img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript" title="JavaScript" className="w-[30px] h-[30px]" />
                             <img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" alt="Tailwind CSS" title="Tailwind CSS" className="w-[30px] h-[30px]" />
@@ -132,7 +128,7 @@ const Projects = ({ projectsRef }) => {
                             <img src="https://cdn.simpleicons.org/node.js/339933" alt="Node.js" className="w-[30px] h-[30px]" />
                             <img src="https://cdn.simpleicons.org/express/000000" alt="Express" className="w-[30px] h-[30px]" />
                             <img src="https://cdn.simpleicons.org/supabase/3ECF8E" alt="Supabase" className="w-[30px] h-[30px]" />
-                            <img src="https://cdn.simpleicons.org/vite/646CFF" alt="Vite" className="w-[30px] h-[30px]" />
+                          
 
                             </span></p>
                         </div>
@@ -140,6 +136,7 @@ const Projects = ({ projectsRef }) => {
             </motion.a>
 
             <motion.a className='w-[45%] h-full backdrop-blur-md border-5 shadow-xl rounded-2xl p-4 cursor-pointer'
+                whileHover={{ scale: 1.05, zIndex: 10, borderColor: "#2563EB", margin: "0.5rem" }} 
                variants={{
                     visible:  { opacity: 1, x:0 },
                     hidden: { opacity: 0, x: 150 }
@@ -148,25 +145,24 @@ const Projects = ({ projectsRef }) => {
                initial="hidden"
                transition={{ duration: 0.6, ease: "easeOut"}}>
                 
-                    <div className='w-full h-[50%] rounded-xl overflow-hidden'>
+                    <div className='w-full max-h-[50%] rounded-xl overflow-hidden'>
                         <img src={JAMarket} alt="" className='w-full h-full object-cover' />
                     </div>
                     <div className='flex flex-col gap-5 items-center'>
                         <h1 className='text-3xl font-extrabold text-center mt-5 text-[#111827]'>
                         JAMarket
                         </h1>
-                        <p className='font-semibold'>JAMarket is an e-commerce platform for buying and selling musical instruments, allowing authorized users to register as sellers and manage listings.</p>
+                        <p className='font-semibold text-center'>JAMarket is an e-commerce platform for buying and selling musical instruments, allowing authorized users to register as sellers and manage listings.</p>
                         <div className=''>
-                           <p className='font-semibold'>Tech stack used: <span className='flex gap-3 items-center'>
+                           <p className='font-semibold text-center'>Tech stack used: <span className='flex gap-3 items-center'>
                                  <img src="https://cdn.simpleicons.org/react/61DAFB" alt="" className="w-[30px] h-[30px]" />
                             <img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript" title="JavaScript" className="w-[30px] h-[30px]" />
-                            <img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" alt="Tailwind CSS" title="Tailwind CSS" className="w-[30px] h-[30px]" />
-                            <img src="https://cdn.simpleicons.org/css3/1572B6" alt="CSS3" className="w-[30px] h-[30px]" />
                             <img src="https://cdn.simpleicons.org/html5/E34F26" alt="HTML5" className="w-[30px] h-[30px]" />
+                             <img src="https://cdn.simpleicons.org/css3/1572B6" alt="CSS3" className="w-[30px] h-[30px]" />
                             <img src="https://cdn.simpleicons.org/node.js/339933" alt="Node.js" className="w-[30px] h-[30px]" />
                             <img src="https://cdn.simpleicons.org/express/000000" alt="Express" className="w-[30px] h-[30px]" />
                             <img src="https://cdn.simpleicons.org/supabase/3ECF8E" alt="Supabase" className="w-[30px] h-[30px]" />
-                            <img src="https://cdn.simpleicons.org/vite/646CFF" alt="Vite" className="w-[30px] h-[30px]" />
+                           
 
                             </span></p>
                         </div>
