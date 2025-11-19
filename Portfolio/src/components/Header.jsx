@@ -20,19 +20,20 @@ const Header = ({ heroRef, aboutMeRef, projectsRef, certificationsRef, contactMe
 
     const [lastScroll, setLastScroll] = useState(0);
     const [show, setShow] = useState(false);
+    const [showSideBar, setShowSideBar] = useState(false);
     
     useEffect(() => {
     const handleScroll = () => {
-            const currentScroll = window.scrollY;
-            if(currentScroll > 100) {
-                setShow(true);
-            } else {
-                setShow(false);
-            }
-            setLastScroll(currentScroll)
+        const currentScroll = window.scrollY;
+        if(currentScroll > 100) {
+          setShow(true);
+        } else {
+          setShow(false);
         }
-        window.addEventListener("scroll", handleScroll);
-        return () => window.addEventListener("scroll", handleScroll)
+        setLastScroll(currentScroll)
+      }
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll)
     }, [lastScroll]);
 
     const scrollToHero = () => {
@@ -57,9 +58,42 @@ const Header = ({ heroRef, aboutMeRef, projectsRef, certificationsRef, contactMe
 
 
   return (
-    <motion.section className='w-full h-[100px] fixed top-0 z-50 bg-[#2563EB]' 
+    <>
+      {/* Mobile top bar */}
+      <div className='md:hidden fixed top-0 left-0 right-0 z-50 bg-[#2563EB] h-12 flex items-center justify-between px-4'>
+        <div className='text-white font-extrabold'> </div>
+        <button
+          type='button'
+          aria-label={showSideBar ? 'Close menu' : 'Open menu'}
+          onClick={() => setShowSideBar((s) => !s)}
+          className='w-10 h-10 bg-[#111827] text-white rounded-md flex items-center justify-center'
+        >
+          {showSideBar ? '✕' : '☰'}
+        </button>
+      </div>
+
+    
+      {showSideBar && (
+        <div className='fixed inset-0 z-40 flex'>
+      
+          <div className='flex-1 bg-[#111827]/50' onClick={() => setShowSideBar(false)} aria-hidden />
+     
+          <aside className='w-64 h-full bg-[#111827] text-white p-6 flex flex-col gap-6'>
+            <button type='button' aria-label='Close menu' onClick={() => setShowSideBar(false)} className='self-end text-2xl'>✕</button>
+            <nav className='flex flex-col gap-4 mt-2'>
+              <button type='button' onClick={() => { setShowSideBar(false); scrollToAboutMe(); }} className='text-lg text-left'>About Me</button>
+              <button type='button' onClick={() => { setShowSideBar(false); scrollToProjects(); }} className='text-lg text-left'>Projects</button>
+              <button type='button' onClick={() => { setShowSideBar(false); scrollToCertifications(); }} className='text-lg text-left'>Certifications</button>
+              <button type='button' onClick={() => { setShowSideBar(false); scrollToContactMe(); }} className='text-lg text-left'>Contact Me</button>
+            </nav>
+          </aside>
+        </div>
+      )}
+
+    <motion.section className='hidden md:block md:fixed w-full h-[100px] top-0 z-50 bg-[#2563EB]'
         animate={{ y: show ? 0 : -120 }}
         transition={{ type: "spring", stiffness: 300, damping: 30 }}>
+         
         <div className='w-full bg-[#2563EB] h-[100px] '>
             <div className='w-full h-[100px] flex justify-between px-50 py-5'>
                 <div  className='flex w-[50%] gap-8 items-center' >
@@ -86,7 +120,7 @@ const Header = ({ heroRef, aboutMeRef, projectsRef, certificationsRef, contactMe
         </div>
         {!show &&  <HeaderTop /> }
     {!show &&
-      <div className='w-full h-[100px] flex justify-between px-50 py-5'>
+      <div className='w-full h-[100px] hidden md:flex justify-between px-50 py-5'>
         <motion.div
           className='flex w-[50%] gap-8'
           variants={containerVariants}
@@ -120,6 +154,7 @@ const Header = ({ heroRef, aboutMeRef, projectsRef, certificationsRef, contactMe
    
      
     </motion.section>
+    </>
   )
 }
 

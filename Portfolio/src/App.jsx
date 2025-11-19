@@ -18,7 +18,7 @@ const App = () => {
 
   return (
     <div className='h-auto w-full bg-[#F9FAFB] scroll-smooth'>
-        <CursorFollower />
+      
         <Header heroRef={heroRef} aboutMeRef={aboutMeRef} projectsRef={projectsRef} certificationsRef={certificationsRef} contactMeRef={contactMeRef}/>
         <Hero heroRef={heroRef} />
         <AboutMe aboutMeRef={aboutMeRef}/>

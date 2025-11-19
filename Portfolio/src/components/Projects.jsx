@@ -21,7 +21,7 @@ const Projects = ({ projectsRef }) => {
     }, [inView, controls]);
 
   return (
-        <section id="projects" className='w-full h-auto bg-[#F9FAFB] flex justify-center scroll-mt-24 py-5' ref={projectsRef}>
+        <section id="projects" className='w-full h-auto bg-[#F9FAFB] flex justify-center scroll-mt-24 py-5 border' ref={projectsRef}>
         <div className='w-[70%] h-full'>
             <motion.h1 className='text-4xl p-5 font-extrabold text-[#2563EB]'
             variants={{ hidden: { opacity: 0, y: -150 }, visible: { opacity: 1, y: 0}}}
@@ -53,12 +53,7 @@ const Projects = ({ projectsRef }) => {
                         <p className='font-semibold text-center'>A web application that helps users explore and discover recipes, ingredients, and cooking ideas from around the world.</p>
                         <div className=''>
                            <p className='font-semibold'>Tech stack used: <span className='flex gap-3 items-center'>
-                            <img src="https://cdn.simpleicons.org/react/61DAFB" alt="" className="w-[30px] h-[30px]" />
-                            <img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript" title="JavaScript" className="w-[30px] h-[30px]" />
-
-                            <img src="https://cdn.simpleicons.org/css3/1572B6" alt="CSS3" className="w-[30px] h-[30px]" />
-                            <img src="https://cdn.simpleicons.org/html5/E34F26" alt="HTML5" className="w-[30px] h-[30px]" />
-
+                         
                             </span></p>
                         </div>
                     </div>
@@ -86,11 +81,7 @@ const Projects = ({ projectsRef }) => {
                         <p className='font-semibold text-center'>DefineIt is an open-source web app that helps users look up word meanings, synonyms, and antonyms.</p>
                         <div className=''>
                            <p className='font-semibold text-center'>Tech stack used: <span className='flex gap-3 items-center'>
-                                   <img src="https://cdn.simpleicons.org/react/61DAFB" alt="" className="w-[30px] h-[30px]" />
-                            <img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript" title="JavaScript" className="w-[30px] h-[30px]" />
-                            <img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" alt="Tailwind CSS" title="Tailwind CSS" className="w-[30px] h-[30px]" />
-                            <img src="https://cdn.simpleicons.org/css3/1572B6" alt="CSS3" className="w-[30px] h-[30px]" />
-                            <img src="https://cdn.simpleicons.org/html5/E34F26" alt="HTML5" className="w-[30px] h-[30px]" />
+                          
                         
 
 
@@ -120,14 +111,7 @@ const Projects = ({ projectsRef }) => {
                         <p className='font-semibold text-center'>LakbayPH is an open-source web app with an interactive map for exploring travel destinations across the Philippines.</p>
                         <div className=''>
                            <p className='font-semibold text-center'>Tech stack used: <span className='flex gap-3 items-center'>
-                                 <img src="https://cdn.simpleicons.org/react/61DAFB" alt="" className="w-[30px] h-[30px]" />
-                            <img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript" title="JavaScript" className="w-[30px] h-[30px]" />
-                            <img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" alt="Tailwind CSS" title="Tailwind CSS" className="w-[30px] h-[30px]" />
-                            <img src="https://cdn.simpleicons.org/css3/1572B6" alt="CSS3" className="w-[30px] h-[30px]" />
-                            <img src="https://cdn.simpleicons.org/html5/E34F26" alt="HTML5" className="w-[30px] h-[30px]" />
-                            <img src="https://cdn.simpleicons.org/node.js/339933" alt="Node.js" className="w-[30px] h-[30px]" />
-                            <img src="https://cdn.simpleicons.org/express/000000" alt="Express" className="w-[30px] h-[30px]" />
-                            <img src="https://cdn.simpleicons.org/supabase/3ECF8E" alt="Supabase" className="w-[30px] h-[30px]" />
+                             
                           
 
                             </span></p>
@@ -135,7 +119,7 @@ const Projects = ({ projectsRef }) => {
                     </div>
             </motion.a>
 
-                <motion.a className='w-[45%] h-auto md:h-[520px] min-h-[480px] flex flex-col justify-between backdrop-blur-md border-5 border-[#111827] hover:border-[#2563EB]  shadow-xl rounded-2xl p-4 cursor-pointer transform transition-transform duration-300 ease-out hover:-translate-y-2 hover:shadow-2xl group'
+                <motion.a className='w-[45%]  h-auto md:h-[520px] min-h-[480px] flex flex-col justify-between backdrop-blur-md border-5 border-[#111827] hover:border-[#2563EB]  shadow-xl rounded-2xl p-4 cursor-pointer transform transition-transform duration-300 ease-out hover:-translate-y-2 hover:shadow-2xl group'
                     variants={{
                     visible:  { opacity: 1, x:0 },
                     hidden: { opacity: 0, x: 150 }
@@ -154,14 +138,7 @@ const Projects = ({ projectsRef }) => {
                         <p className='font-semibold text-center'>JAMarket is an e-commerce platform for buying and selling musical instruments, allowing authorized users to register as sellers and manage listings.</p>
                         <div className=''>
                            <p className='font-semibold text-center'>Tech stack used: <span className='flex gap-3 items-center'>
-                                 <img src="https://cdn.simpleicons.org/react/61DAFB" alt="" className="w-[30px] h-[30px]" />
-                            <img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript" title="JavaScript" className="w-[30px] h-[30px]" />
-                            <img src="https://cdn.simpleicons.org/html5/E34F26" alt="HTML5" className="w-[30px] h-[30px]" />
-                             <img src="https://cdn.simpleicons.org/css3/1572B6" alt="CSS3" className="w-[30px] h-[30px]" />
-                            <img src="https://cdn.simpleicons.org/node.js/339933" alt="Node.js" className="w-[30px] h-[30px]" />
-                            <img src="https://cdn.simpleicons.org/express/000000" alt="Express" className="w-[30px] h-[30px]" />
-                            <img src="https://cdn.simpleicons.org/supabase/3ECF8E" alt="Supabase" className="w-[30px] h-[30px]" />
-                           
+                             
 
                             </span></p>
                         </div>
