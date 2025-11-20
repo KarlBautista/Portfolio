@@ -17,7 +17,7 @@ const AboutMe = ({ aboutMeRef }) => {
 
   return (
     <section className='w-full  h-[40vh] p-5 md:h-[50vh] bg-[#111827] flex justify-center scroll-mt-60' ref={aboutMeRef}>
-        <motion.div className='w-full md:w-[60%] h-full md:py-10 px-5 flex flex-col gap-5 items-center justify-center' 
+        <motion.div className='w-full md:w-[60%] h-full md:py-10  flex flex-col gap-5 items-center justify-center' 
          ref={inViewRef}
         variants={{
             hidden: { opacity: 0, y: 50 },
@@ -28,7 +28,7 @@ const AboutMe = ({ aboutMeRef }) => {
         transition={{ duration: 0.6, ease: "easeOut" }}>
             <h1 className='text-2xl md:text-4xl text-[#F9FAFB] font-extrabold'>About Me</h1>
             <div className='w-full h-50'>
-                <p className='text-[16px] md:text-2x text-[#F9FAFB] font-bold text-center md:text-left'>I'm a 4th-year Bachelor of Science in Information Technology student 
+                <p className='text-[16px] md:text-2xl text-[#F9FAFB] font-bold text-center md:text-left'>I'm a 4th-year Bachelor of Science in Information Technology student 
                     from TUP-Manila, consistently achieving academic excellence, with a strong interest in creating dynamic websites. 
                     I specialize in building interactive web applications using React, JavaScript, Tailwind CSS, and Express. I enjoy problem-solving, learning new technologies, and developing projects that provide real value to users.
                 </p>

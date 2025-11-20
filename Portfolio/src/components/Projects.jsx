@@ -22,15 +22,15 @@ const Projects = ({ projectsRef }) => {
 
   return (
         <section id="projects" className='w-full h-auto bg-[#F9FAFB] flex justify-center scroll-mt-24 py-5 border' ref={projectsRef}>
-        <div className='w-[70%] h-full'>
-            <motion.h1 className='text-4xl p-5 font-extrabold text-[#2563EB]'
+        <div className='w-full md:w-[70%] h-full'>
+            <motion.h1 className='text-2xl p-5 font-extrabold text-[#2563EB]'
             variants={{ hidden: { opacity: 0, y: -150 }, visible: { opacity: 1, y: 0}}}
             animate={controls}
             initial="hidden"
             transition={{ duration: 0.6, ease: "easeOut"}}>Projects</motion.h1>
             
-            <div className=' w-full h-full flex flex-wrap gap-5 justify-center' ref={inViewRef}>
-               <motion.a className='w-[45%] h-auto md:h-[520px] min-h-[480px] flex flex-col justify-between backdrop-blur-md border-5 border-[#111827] hover:border-[#2563EB] shadow-xl rounded-2xl p-4 transform transition-transform duration-300 ease-out hover:-translate-y-2 hover:shadow-2xl group
+            <div className=' w-full h-full flex flex-wrap gap-5 justify-center p-3' ref={inViewRef}>
+               <motion.a className='w-full md:w-[45%] h-auto md:h-[520px] min-h-[480px] flex flex-col justify-between backdrop-blur-md border-5 border-[#111827] hover:border-[#2563EB] shadow-xl rounded-2xl p-4 transform transition-transform duration-300 ease-out hover:-translate-y-2 hover:shadow-2xl group
                
                '
                href='https://recipefinder-gamma.vercel.app/'
@@ -60,7 +60,7 @@ const Projects = ({ projectsRef }) => {
                 </motion.a>
                 
 
-                <motion.a className='w-[45%] h-auto md:h-[520px] min-h-[480px] flex flex-col justify-between backdrop-blur-md border-5 border-[#111827] hover:border-[#2563EB]  shadow-xl rounded-2xl p-4 transform transition-transform duration-300 ease-out hover:-translate-y-2 hover:shadow-2xl group'
+                <motion.a className='w-full md:w-[45%]  h-auto md:h-[520px] min-h-[480px] flex flex-col justify-between backdrop-blur-md border-5 border-[#111827] hover:border-[#2563EB]  shadow-xl rounded-2xl p-4 transform transition-transform duration-300 ease-out hover:-translate-y-2 hover:shadow-2xl group'
                     href='https://defineit-nu.vercel.app/'
                     target='_blank' rel='noreferrer'
                variants={{
@@ -90,7 +90,7 @@ const Projects = ({ projectsRef }) => {
                     </div>
                 </motion.a>
 
-            <motion.a className='w-[45%] h-auto md:h-[520px] min-h-[480px] flex flex-col justify-between backdrop-blur-md border-5 border-[#111827] hover:border-[#2563EB]  shadow-xl rounded-2xl p-4 transform transition-transform duration-300 ease-out hover:-translate-y-2 hover:shadow-2xl group'
+            <motion.a className='w-full md:w-[45%]  h-auto md:h-[520px] min-h-[480px] flex flex-col justify-between backdrop-blur-md border-5 border-[#111827] hover:border-[#2563EB]  shadow-xl rounded-2xl p-4 transform transition-transform duration-300 ease-out hover:-translate-y-2 hover:shadow-2xl group'
                 href='https://lakbayph.vercel.app/'
                 target='_blank' rel='noreferrer'
                variants={{
@@ -119,7 +119,7 @@ const Projects = ({ projectsRef }) => {
                     </div>
             </motion.a>
 
-                <motion.a className='w-[45%]  h-auto md:h-[520px] min-h-[480px] flex flex-col justify-between backdrop-blur-md border-5 border-[#111827] hover:border-[#2563EB]  shadow-xl rounded-2xl p-4 cursor-pointer transform transition-transform duration-300 ease-out hover:-translate-y-2 hover:shadow-2xl group'
+                <motion.a className='w-full md:w-[45%]  h-auto md:h-[520px] min-h-[480px] flex flex-col justify-between backdrop-blur-md border-5 border-[#111827] hover:border-[#2563EB]  shadow-xl rounded-2xl p-4 cursor-pointer transform transition-transform duration-300 ease-out hover:-translate-y-2 hover:shadow-2xl group'
                     variants={{
                     visible:  { opacity: 1, x:0 },
                     hidden: { opacity: 0, x: 150 }
