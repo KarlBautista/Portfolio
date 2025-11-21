@@ -40,10 +40,11 @@ const CursorFollower = () => {
   return (
     <div
       ref={followerRef}
-      className="hidden md:fixed pointer-events-none"
       style={{
+        position: "fixed",
         top: 0,
         left: 0,
+        pointerEvents: "none",
         zIndex: 9999,
         width: "120px",
         height: "70px",
