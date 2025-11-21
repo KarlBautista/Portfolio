@@ -56,17 +56,18 @@ const Header = ({ heroRef, aboutMeRef, projectsRef, certificationsRef, contactMe
         contactMeRef.current.scrollIntoView({ behavior: "smooth" })
     }
 
-
+    console.log(showSideBar);
+    
   return (
     <>
-      {/* Mobile top bar */}
+    
       <div className='md:hidden fixed top-0 left-0 right-0 z-50 bg-[#2563EB] h-12 flex items-center justify-between px-4'>
         <div className='text-white font-extrabold'> </div>
         <button
           type='button'
           aria-label={showSideBar ? 'Close menu' : 'Open menu'}
           onClick={() => setShowSideBar((s) => !s)}
-          className='w-10 h-10 bg-[#111827] text-white rounded-md flex items-center justify-center'
+          className='w-10 h-10 bg-[#2563EB7] text-white rounded-md flex items-center justify-center z-50'
         >
           {showSideBar ? '✕' : '☰'}
         </button>

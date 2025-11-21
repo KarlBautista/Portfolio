@@ -5,7 +5,7 @@ import Lakbay from "../assets/Lakbay.png"
 import JAMarket from "../assets/JAMarket.png"
 import { useInView } from 'react-intersection-observer'
 import  { motion, useAnimation } from "framer-motion"
-import ReactJS from "../assets/react.svg"
+
 
 
 const Projects = ({ projectsRef }) => {    
@@ -21,7 +21,7 @@ const Projects = ({ projectsRef }) => {
     }, [inView, controls]);
 
   return (
-        <section id="projects" className='w-full h-auto bg-[#F9FAFB] flex justify-center scroll-mt-24 py-5 border' ref={projectsRef}>
+        <section id="projects" className='w-full h-auto min-h-[60vh] bg-[#F9FAFB] flex justify-center scroll-mt-24 py-5 border' ref={projectsRef}>
         <div className='w-full md:w-[70%] h-full'>
             <motion.h1 className='text-2xl p-5 font-extrabold text-[#2563EB]'
             variants={{ hidden: { opacity: 0, y: -150 }, visible: { opacity: 1, y: 0}}}
