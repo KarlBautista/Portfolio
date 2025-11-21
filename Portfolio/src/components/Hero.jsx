@@ -2,7 +2,9 @@ import React from 'react'
 import HeroTitle from './HeroTitle'
 import MyPicture from "../assets/mypicture.jpg"
 import { easeOut, motion } from 'framer-motion'
-
+import Google from "../assets/google.svg"
+import Github from "../assets/Github.svg"
+import CV from "../assets/Karl-Bautista-CV.pdf";
 const Hero = () => {  
     return (
     <div className='w-full min-h-[98vh] flex justify-center items-center font-extrabold'>
@@ -14,6 +16,20 @@ const Hero = () => {
           <HeroTitle />
           <div className='w-full'>
             <h1 className='md:text-2xl text-base text-black'>I'm an aspiring full-stack web developer with a strong focus on frontend development and a growing foundation in backend technologies.</h1>
+          </div>
+          <div className='w-full h-full flex gap-3 justify-center md:justify-start'>
+            <a href='https://mail.google.com/mail/?view=cm&fs=1&to=karlbautista234@gmail.com' target='_blank' className='w-8 h-8 rounded-full  p-1.5 bg-[#2563EB] cursor-pointer hover:brightness-110' title='karlbautista234@gmail.com'>
+               <img src={Google} alt="" className='w-full h-full invert brightness-0 '/>
+            </a>
+
+            <a href='https://github.com/KarlBautista' target='_blank' className='w-8 h-8 rounded-full  p-1.5 bg-[#2563EB] cursor-pointer hover:brightness-110' title='https://github.com/KarlBautista'>
+               <img src={Github} alt="" className='w-full h-full invert brightness-0 '/>
+            </a>
+
+            <a href={CV} download className='flex items-center w-auto h-8 rounded-full px-3 py-1 bg-[#2563EB] cursor-pointer hover:brightness-110' title='My CV'>
+                <h1 className='text-[#F9FAFB] text-[12px]'>Download my CV</h1>
+            </a>
+             
           </div>
         </motion.div>
 
