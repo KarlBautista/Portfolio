@@ -1,2 +1,10 @@
 
- 
+ @keyframes wiggle {
+  0%, 100% { transform: rotate(-12deg); }
+  50% { transform: rotate(12deg); }
+}
+
+.wiggle:hover {
+  display: inline-block; 
+  animation: wiggle 0.3s ease-in-out infinite;
+}

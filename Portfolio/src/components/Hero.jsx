@@ -1,11 +1,31 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import HeroTitle from './HeroTitle'
 import MyPicture from "../assets/mypicture.jpg"
 import { easeOut, motion } from 'framer-motion'
 import Google from "../assets/google.svg"
 import Github from "../assets/Github.svg"
 import CV from "../assets/Karl-Bautista-CV.pdf";
+import Shades from "../assets/mypicture-shades.png"
+import "../App.css"
+
 const Hero = () => {  
+    const [picture, setPicture] = useState(MyPicture);
+
+    useEffect(() => {
+      const rotatePicture = setInterval(() => {
+        setPicture((p) => p === MyPicture ? Shades : MyPicture);
+      }, 3000)
+       return () => clearInterval(rotatePicture);
+    }, []);
+
+    const changePicture = () => {
+      setPicture((p) => p === MyPicture ? Shades : MyPicture);
+    }
+
+
+    
+ 
+
     return (
     <div className='w-full min-h-[98vh] flex justify-center items-center font-extrabold'>
       <div className='w-full max-w-5xl flex flex-col-reverse md:flex-row items-center gap-6 md:gap-8 px-4 md:px-0'>
@@ -15,7 +35,8 @@ const Hero = () => {
               transition={{ duration: 1.2 , ease: "easeOut" }}>
           <HeroTitle />
           <div className='w-full'>
-            <h1 className='md:text-2xl text-base text-black'>I'm an aspiring full-stack web developer with a strong focus on frontend development and a growing foundation in backend technologies.</h1>
+            <h1 className='md:text-2xl text-base text-black cursor-default'>{`I'm an aspiring full-stack web developer with a strong focus on frontend development and a growing foundation in backend technologies.`
+              .split('').map((letter, i) => <span key={i} className='wiggle'>{letter}</span> )}</h1>
           </div>
           <div className='w-full h-full flex gap-3 justify-center md:justify-start'>
             <a href='https://mail.google.com/mail/?view=cm&fs=1&to=karlbautista234@gmail.com' target='_blank' className='w-8 h-8 rounded-full  p-1.5 bg-[#2563EB] cursor-pointer hover:brightness-110' title='karlbautista234@gmail.com'>
@@ -37,7 +58,7 @@ const Hero = () => {
               initial={{ opacity: 0, x: 150 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1.2, ease: "easeOut"}}>
-          <img src={MyPicture} alt="my picture"  className='rounded-full border-3 w-60 h-60 md:w-70 md:h-70 lg:w-85 lg:h-85 object-cover hover:border-[#2563EB] '/>
+          <img src={picture} onClick={() => changePicture()} id='my-image' alt="my picture"  className='rounded-full border-3 w-60 h-60 md:w-70 md:h-70 lg:w-85 lg:h-85 object-cover hover:border-[#2563EB] '/>
         </motion.div>
       </div>
       
