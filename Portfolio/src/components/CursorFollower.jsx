@@ -40,8 +40,8 @@ const CursorFollower = () => {
   return (
     <div
       ref={followerRef}
-      style={{
-        position: "fixed",
+      style={{  
+        position: 'fixed',
         top: 0,
         left: 0,
         pointerEvents: "none",
