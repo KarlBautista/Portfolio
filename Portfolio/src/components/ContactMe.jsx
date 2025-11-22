@@ -1,9 +1,18 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { motion, useAnimation } from 'framer-motion'; 
 import { useInView } from 'react-intersection-observer';
+import emailjs from "emailjs-com"
 const ContactMe = ({ contactMeRef }) => {
 
     const controls = useAnimation();
+    const [emailData, setEmailData] = useState({
+        name: "",
+        email: "",
+        message: "",
+    })
+    const emailServiceId = "service_zwyzxdt";
+    const emailTemplateId = "template_lyw31ik";
+    const emailPublicKey = "pBHUzq_k_qPktSPjC";
     const { ref: inViewRef, inView } = useInView({
         threshold: 0.3
     })
@@ -11,10 +20,30 @@ const ContactMe = ({ contactMeRef }) => {
         if (inView) {
             controls.start("visible");
         }
-    }, [inView, controls])
+    }, [inView, controls]);
+ 
 
-    const handleOnSubmit = (e) => {
+    const handleOnSubmit = async (e) => {
         e.preventDefault();
+        const formData = new FormData();
+        Object.entries(emailData).forEach(([key, value]) => {
+        formData.append(key, value);
+        });
+
+        const response = await emailjs.sendForm(emailServiceId, emailTemplateId, e.target, emailPublicKey);
+        if(!response.status === 200){
+          alert("There was a problem sending your email");
+        }
+         alert("Thank you for messaging me");
+         setEmailData({
+            name: "",
+            email: "",
+            message: "",
+         })
+    }
+    const handleOnChange = (e) => {
+        const { name, value } = e.target;
+        setEmailData((prev) => ({ ...prev, [name]:value }));
     }
     return (
         <section className='w-full bg-[#0b0f19] border-t-5 flex justify-center py-8 px-4' ref={contactMeRef}>
@@ -33,22 +62,22 @@ const ContactMe = ({ contactMeRef }) => {
                             <form onSubmit={handleOnSubmit} className='mt-6 grid grid-cols-1 md:grid-cols-2 gap-4'>
                                 <label className='flex flex-col gap-2'>
                                     <span className='text-sm font-medium text-[#F9FAFB]'>Name</span>
-                                    <input type='text' name='name' required className='w-full bg-[#F9FAFB] text-black px-4 py-2 rounded-md' />
+                                    <input type='text' name='name' value={emailData.name} onChange={handleOnChange} required className='w-full bg-[#F9FAFB] text-black px-4 py-2 rounded-md' />
                                 </label>
 
                                 <label className='flex flex-col gap-2'>
                                     <span className='text-sm font-medium text-[#F9FAFB]'>Email</span>
-                                    <input type='email' name='email' required className='w-full bg-[#F9FAFB] text-black px-4 py-2 rounded-md' />
+                                    <input type='email' name='email' value={emailData.email} onChange={handleOnChange} required className='w-full bg-[#F9FAFB] text-black px-4 py-2 rounded-md' />
                                 </label>
 
                                 <label className='md:col-span-2 flex flex-col gap-2'>
                                     <span className='text-sm font-medium text-[#F9FAFB]'>Message</span>
-                                    <textarea name='message' id='message' rows={6} required className='w-full bg-[#F9FAFB] text-black px-4 py-3 rounded-md resize-none'></textarea>
+                                    <textarea name='message' value={emailData.message} onChange={handleOnChange} id='message' rows={6} required className='w-full bg-[#F9FAFB] text-black px-4 py-3 rounded-md resize-none'></textarea>
                                 </label>
 
                                 <div className='md:col-span-2 flex flex-col md:flex-row items-center gap-4 justify-between mt-2'>
                                     <button type='submit' className='bg-[#2563EB] px-6 py-2 text-[#F9FAFB] font-semibold rounded-md w-full md:w-auto'>Send</button>
-                                    <a href='mailto:your-email@example.com' className='text-sm font-semibold text-[#F9FAFB] underline'>Or send me an email</a>
+                                    <a href='https://mail.google.com/mail/?view=cm&fs=1&to=karlbautista234@gmail.com' target="_blank" className='text-sm font-semibold text-[#F9FAFB] underline'>Or send me through Gmail</a>
                                 </div>
                             </form>
                         </div>
