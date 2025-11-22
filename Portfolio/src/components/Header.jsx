@@ -61,7 +61,7 @@ const Header = ({ heroRef, aboutMeRef, projectsRef, certificationsRef, contactMe
   return (
     <>
     
-      <div className='md:hidden fixed top-0 left-0 right-0 z-50 bg-[#2563EB] h-12 flex items-center justify-between px-4'>
+      <div className='lg:hidden fixed top-0 left-0 right-0 z-50 bg-[#2563EB] h-12 flex items-center justify-between px-4'>
         <div className='text-white font-extrabold'> </div>
         <button
           type='button'
@@ -91,7 +91,7 @@ const Header = ({ heroRef, aboutMeRef, projectsRef, certificationsRef, contactMe
         </div>
       )}
 
-    <motion.section className='hidden md:block md:fixed w-full h-[100px] top-0 z-50 bg-[#2563EB]'
+    <motion.section className='hidden lg:block md:fixed w-full h-[100px] top-0 z-50 bg-[#2563EB]'
         animate={{ y: show ? 0 : -120 }}
         transition={{ type: "spring", stiffness: 300, damping: 30 }}>
          
@@ -121,7 +121,7 @@ const Header = ({ heroRef, aboutMeRef, projectsRef, certificationsRef, contactMe
         </div>
         {!show &&  <HeaderTop /> }
     {!show &&
-      <div className='w-full h-[100px] hidden md:flex justify-between px-50 py-5'>
+      <div className='w-full h-[100px] hidden lg:flex justify-between px-50 py-5'>
         <motion.div
           className='flex w-[50%] gap-8'
           variants={containerVariants}
