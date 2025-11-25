@@ -17,7 +17,7 @@ const App = () => {
   const contactMeRef = useRef(null);
 
   return (
-    <div className='h-auto min-w-[200px] w-full bg-[#F9FAFB] scroll-smooth overflow-x-hidden'>
+    <div className='h-auto min-w-[360px] w-full bg-[#F9FAFB] scroll-smooth overflow-x-hidden'>
         {window.innerWidth >= 768 && <CursorFollower />}
         <Header heroRef={heroRef} aboutMeRef={aboutMeRef} projectsRef={projectsRef} certificationsRef={certificationsRef} contactMeRef={contactMeRef}/>
         <Hero heroRef={heroRef} />
