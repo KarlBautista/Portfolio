@@ -5,9 +5,6 @@ import Lakbay from "../assets/Lakbay.png"
 import JAMarket from "../assets/JAMarket.png"
 import { useInView } from 'react-intersection-observer'
 import  { motion, useAnimation } from "framer-motion"
-
-
-
 const Projects = ({ projectsRef }) => {    
 
     const controls = useAnimation();
