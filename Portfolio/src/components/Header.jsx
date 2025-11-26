@@ -61,7 +61,7 @@ const Header = ({ heroRef, aboutMeRef, projectsRef, certificationsRef, contactMe
   return (
     <>
     
-      <div className='lg:hidden fixed top-0 left-0 right-0 z-50 bg-[#2563EB] h-12 flex items-center justify-between px-4'>
+      <div className='lg:hidden fixed top-0 left-0 right-0 z-50 bg-[#2563EB] h-12 flex items-center justify-between px-4 '>
         <div className='text-white font-extrabold'> </div>
         <button
           type='button'

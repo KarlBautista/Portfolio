@@ -18,9 +18,9 @@ const Projects = ({ projectsRef }) => {
     }, [inView, controls]);
 
   return (
-        <section id="projects" className='w-full h-auto min-h-[60vh] bg-[#F9FAFB] flex justify-center scroll-mt-24 py-5 border' ref={projectsRef}>
+        <section id="projects" className='w-full h-auto min-h-[60vh] bg-[#F9FAFB] flex justify-center scroll-mt-24 py-5 ' ref={projectsRef}>
         <div className='w-full md:w-[70%] h-full'>
-            <motion.h1 className='text-2xl p-5 font-extrabold text-[#2563EB]'
+            <motion.h1 className='text-2xl text-start p-5  md:text-3xl font-extrabold text-[#2563EB]'
             variants={{ hidden: { opacity: 0, y: -150 }, visible: { opacity: 1, y: 0}}}
             animate={controls}
             initial="hidden"
@@ -32,7 +32,7 @@ const Projects = ({ projectsRef }) => {
                '
                href='https://recipefinder-gamma.vercel.app/'
                target='_blank' rel='noreferrer'
-               variants={{
+               variants={{  
                     visible:  { opacity: 1, x:0 },
                     hidden: { opacity: 0, x:-150 }
                }}

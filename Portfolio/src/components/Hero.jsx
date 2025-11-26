@@ -25,7 +25,7 @@ const Hero = () => {
 
 
     return (
-    <div className='w-full min-h-[98vh] md:px-5 flex justify-center items-center font-extrabold'>
+    <div className='w-full min-h-[120vh] mb-20 md:px-5 flex justify-center items-center font-extrabold'>
       <div className='w-full max-w-5xl flex flex-col-reverse lg:flex-row items-center gap-6 md:gap-8 px-4 md:px-0'>
         <motion.div className='w-full md:w-2/3 flex flex-col justify-center gap-5 text-center md:text-left'
               initial={{ opacity: 0, x: -150 }}
