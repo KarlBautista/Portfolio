@@ -5,6 +5,18 @@ import Lakbay from "../assets/Lakbay.png"
 import JAMarket from "../assets/JAMarket.png"
 import { useInView } from 'react-intersection-observer'
 import  { motion, useAnimation } from "framer-motion"
+
+const techBadges = {
+    HTML: 'https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white&style=flat-square',
+    CSS: 'https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white&style=flat-square',
+    JavaScript: 'https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black&style=flat-square',
+    'Tailwind CSS': 'https://img.shields.io/badge/Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white&style=flat-square',
+    ReactJS: 'https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black&style=flat-square',
+    'Node.js': 'https://img.shields.io/badge/Node.js-339933?logo=node.js&logoColor=white&style=flat-square',
+    'Express.js': 'https://img.shields.io/badge/Express.js-000000?logo=express&logoColor=white&style=flat-square',
+    GitHub: 'https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white&style=flat-square',
+    Supabase: 'https://img.shields.io/badge/Supabase-3ECF8E?logo=supabase&logoColor=white&style=flat-square'
+}
 const Projects = ({ projectsRef }) => {    
 
     const controls = useAnimation();
@@ -54,12 +66,15 @@ const Projects = ({ projectsRef }) => {
                         <h1 className='text-3xl font-extrabold text-center mt-5 text-[#111827]'>
                         RecipeFinder
                         </h1>
-                        <p className='font-semibold text-center'>A web application that helps users explore and discover recipes, ingredients, and cooking ideas from around the world.</p>
-                        <div className=''>
-                           <p className='font-semibold'>Tech stack used: <span className='flex gap-3 items-center'>
-                         
-                            </span></p>
-                        </div>
+                                <p className='font-semibold text-center'>A web application that helps users explore and discover recipes, ingredients, and cooking ideas from around the world.</p>
+                                <div className=''>
+                                    <p className='font-semibold'>Tech stack used:</p>
+                                                     <div className='flex flex-wrap gap-2 mt-2 justify-center items-center'>
+                                                         {['HTML', 'CSS', 'JavaScript', 'ReactJS', 'GitHub',].map(t => (
+                                                                <img key={t} src={techBadges[t]} alt={t} title={t} className='h-6 rounded' />
+                                                         ))}
+                                                     </div>
+                                </div>
                     </div>
                 </motion.a>
                 
@@ -82,15 +97,15 @@ const Projects = ({ projectsRef }) => {
                         <h1 className='text-3xl font-extrabold text-center mt-5 text-[#111827]'>
                         DefineIt
                         </h1>
-                        <p className='font-semibold text-center'>DefineIt is an open-source web app that helps users look up word meanings, synonyms, and antonyms.</p>
-                        <div className=''>
-                           <p className='font-semibold text-center'>Tech stack used: <span className='flex gap-3 items-center'>
-                          
-                        
-
-
-                            </span></p>
-                        </div>
+                                <p className='font-semibold text-center'>DefineIt is an open-source web app that helps users look up word meanings, synonyms, and antonyms.</p>
+                                <div className=''>
+                                    <p className='font-semibold text-center'>Tech stack used:</p>
+                                                     <div className='flex flex-wrap gap-2 mt-2 justify-center items-center'>
+                                                         {['HTML', 'JavaScript', 'Tailwind CSS', 'ReactJS', 'GitHub'].map(t => (
+                                                                <img key={t} src={techBadges[t]} alt={t} title={t} className='h-6 rounded' />
+                                                         ))}
+                                                     </div>
+                                </div>
                     </div>
                 </motion.a>
 
@@ -112,14 +127,15 @@ const Projects = ({ projectsRef }) => {
                         <h1 className='text-3xl font-extrabold text-center mt-5 text-[#111827]'>
                         LakbayPH
                         </h1>
-                        <p className='font-semibold text-center'>LakbayPH is an open-source web app with an interactive map for exploring travel destinations across the Philippines.</p>
-                        <div className=''>
-                           <p className='font-semibold text-center'>Tech stack used: <span className='flex gap-3 items-center'>
-                             
-                          
-
-                            </span></p>
-                        </div>
+                                <p className='font-semibold text-center'>LakbayPH is an open-source web app with an interactive map for exploring travel destinations across the Philippines.</p>
+                                <div className=''>
+                                    <p className='font-semibold text-center'>Tech stack used:</p>
+                                                     <div className='flex flex-wrap gap-2 mt-2 justify-center items-center'>
+                                                         {['HTML', 'JavaScript', 'Tailwind CSS', 'ReactJS', 'Node.js', 'Express.js', 'GitHub', 'Supabase'].map(t => (
+                                                                <img key={t} src={techBadges[t]} alt={t} title={t} className='h-6 rounded' />
+                                                         ))}
+                                                     </div>
+                                </div>
                     </div>
             </motion.a>
 
@@ -142,13 +158,15 @@ const Projects = ({ projectsRef }) => {
                         <h1 className='text-3xl font-extrabold text-center mt-5 text-[#111827]'>
                         JAMarket
                         </h1>
-                        <p className='font-semibold text-center'>JAMarket is an e-commerce platform for buying and selling musical instruments, allowing authorized users to register as sellers and manage listings.</p>
-                        <div className=''>
-                           <p className='font-semibold text-center'>Tech stack used: <span className='flex gap-3 items-center'>
-                             
-
-                            </span></p>
-                        </div>
+                                <p className='font-semibold text-center'>JAMarket is an e-commerce platform for buying and selling musical instruments, allowing authorized users to register as sellers and manage listings.</p>
+                                <div className=''>
+                                    <p className='font-semibold text-center'>Tech stack used:</p>
+                                                     <div className='flex flex-wrap gap-2 mt-2 justify-center items-center'>
+                                                         {['HTML', 'CSS', 'JavaScript', 'ReactJS', 'Node.js', 'Express.js', 'GitHub', 'Supabase'].map(t => (
+                                                                <img key={t} src={techBadges[t]} alt={t} title={t} className='h-6 rounded' />
+                                                         ))}
+                                                     </div>
+                                </div>
                     </div>
             </motion.a>
                        
