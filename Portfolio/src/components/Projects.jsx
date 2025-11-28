@@ -25,6 +25,7 @@ const Projects = ({ projectsRef }) => {
             animate={controls}
             initial="hidden"
             transition={{ duration: 0.6, ease: "easeOut"}}>Projects</motion.h1>
+            <p className='italic text-[12px] text-gray-500 px-5'>(LakbayPH and JAMarket include a 30-second cooldown due to backend hosting on Render’s free tier.)</p>
             
             <div className=' w-full h-full flex flex-wrap gap-5 justify-center p-3' ref={inViewRef}>
                <motion.a className='w-full lg:w-[45%] h-auto md:h-[520px] min-h-[480px] flex flex-col justify-between backdrop-blur-md border-5 border-[#111827] hover:border-[#2563EB] shadow-xl rounded-2xl p-4 transform transition-transform duration-300 ease-out hover:-translate-y-2 hover:shadow-2xl group
@@ -125,7 +126,8 @@ const Projects = ({ projectsRef }) => {
                initial="hidden"
                transition={{ duration: 0.2, ease: "easeOut"}}
                href='https://jamarket.vercel.app/' 
-               target='_blank'>
+               target='_blank'
+               rel='noreferrer'>
                 
                     <div className='w-full rounded-xl overflow-hidden h-1/2 md:h-[52%]'>
                         <img src={JAMarket} alt="" className='w-full h-full object-cover' />
