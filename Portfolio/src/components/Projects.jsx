@@ -123,7 +123,9 @@ const Projects = ({ projectsRef }) => {
                }}
                animate={controls}
                initial="hidden"
-               transition={{ duration: 0.2, ease: "easeOut"}}>
+               transition={{ duration: 0.2, ease: "easeOut"}}
+               href='https://jamarket.vercel.app/' 
+               target='_blank'>
                 
                     <div className='w-full rounded-xl overflow-hidden h-1/2 md:h-[52%]'>
                         <img src={JAMarket} alt="" className='w-full h-full object-cover' />
