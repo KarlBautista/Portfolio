@@ -16,7 +16,7 @@ const itemVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 }
 
-const Header = ({ heroRef, aboutMeRef, projectsRef, certificationsRef, contactMeRef }) => {
+const Header = ({ heroRef, aboutMeRef, projectsRef, certificationsRef, contactMeRef, educationRef }) => {
 
     const [lastScroll, setLastScroll] = useState(0);
     const [show, setShow] = useState(false);
@@ -48,6 +48,10 @@ const Header = ({ heroRef, aboutMeRef, projectsRef, certificationsRef, contactMe
         projectsRef.current.scrollIntoView({ behavior: "smooth" })
     }
 
+    const scrollToEducation = () => {
+      educationRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+
      const scrollToCertifications = () => {
         certificationsRef.current.scrollIntoView({ behavior: "smooth" })
     }
@@ -56,7 +60,7 @@ const Header = ({ heroRef, aboutMeRef, projectsRef, certificationsRef, contactMe
         contactMeRef.current.scrollIntoView({ behavior: "smooth" })
     }
 
-    console.log(showSideBar);
+
     
   return (
     <>
@@ -84,6 +88,7 @@ const Header = ({ heroRef, aboutMeRef, projectsRef, certificationsRef, contactMe
             <nav className='flex flex-col gap-4 mt-2'>
               <button type='button' onClick={() => { setShowSideBar(false); scrollToAboutMe(); }} className='text-lg text-left'>About Me</button>
               <button type='button' onClick={() => { setShowSideBar(false); scrollToProjects(); }} className='text-lg text-left'>Projects</button>
+              <button type='button' onClick={() => { setShowSideBar(false); scrollToCertifications(); }} className='text-lg text-left'>Education</button>
               <button type='button' onClick={() => { setShowSideBar(false); scrollToCertifications(); }} className='text-lg text-left'>Certifications</button>
               <button type='button' onClick={() => { setShowSideBar(false); scrollToContactMe(); }} className='text-lg text-left'>Contact Me</button>
             </nav>
@@ -105,6 +110,10 @@ const Header = ({ heroRef, aboutMeRef, projectsRef, certificationsRef, contactMe
           <a className='text-2xl font-extrabold text-[#F9FAFB] hover:text-[#1F1F1F] duration-100 ease-in-out cursor-pointer '
           onClick={() => scrollToProjects()} >
             Projects
+          </a>
+          <a  className='text-2xl font-extrabold text-[#F9FAFB] hover:text-[#1F1F1F] duration-100 ease-in-out cursor-pointer'
+          onClick={() => scrollToEducation()}>
+            Education
           </a>
           <a  className='text-2xl font-extrabold text-[#F9FAFB] hover:text-[#1F1F1F] duration-100 ease-in-out cursor-pointer'
           onClick={() => scrollToCertifications()}>
@@ -135,6 +144,10 @@ const Header = ({ heroRef, aboutMeRef, projectsRef, certificationsRef, contactMe
           <motion.a className='text-2xl font-extrabold text-[#1F1F1F] header-btn-hover cursor-pointer' variants={itemVariants}
           onClick={() => scrollToProjects()}>
             Projects
+          </motion.a>
+          <motion.a className='text-2xl font-extrabold text-[#1F1F1F] header-btn-hover cursor-pointer' variants={itemVariants}
+          onClick={() => scrollToEducation()}>
+            Education
           </motion.a>
           <motion.a className='text-2xl font-extrabold text-[#1F1F1F] header-btn-hover cursor-pointer' variants={itemVariants}
           onClick={() => scrollToCertifications()}>

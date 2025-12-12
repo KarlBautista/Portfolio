@@ -9,19 +9,12 @@ import Shades from "../assets/mypicture-shades.png"
 import "../App.css"
 
 const Hero = () => {  
-    const [picture, setPicture] = useState(MyPicture);
-
-    useEffect(() => {
-      const rotatePicture = setInterval(() => {
-        setPicture((p) => p === MyPicture ? Shades : MyPicture);
-      }, 5000)
-       return () => clearInterval(rotatePicture);
-    }, []);
+  
+    const [picture, setPicture] = useState(MyPicture)
 
     const changePicture = () => {
-      setPicture((p) => p === MyPicture ? Shades : MyPicture);
+      setPicture((prev) => prev === MyPicture ? Shades : MyPicture);
     }
-
 
 
     return (
