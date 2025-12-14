@@ -15,7 +15,7 @@ const Education = ({ educationRef }) => {
         }
     }, [inView, controls]);
   return (
-    <section className='w-full h-auto mb-10  flex justify-center scroll-mt-50' ref={educationRef}>
+    <section className='w-full h-auto mb-10  flex justify-center md:scroll-mt-70' ref={educationRef}>
         <div className='w-full md:w-[70%] h-full p-5'>
             <motion.h1 
             variants={{ hidden: { opacity: 0, y: -150}, visible: { opacity: 1, y: 0 }} }
