@@ -3,6 +3,7 @@ import RecipeFinder from "../assets/RecipeFinder2.png"
 import DefineIt from "../assets/DefineIt.png"
 import Lakbay from "../assets/Lakbay.png"
 import JAMarket from "../assets/JAMarket.png"
+import Techclinic from "../assets/Techclinic.png"
 import GridClash from "../assets/GridClash.png"
 import { useInView } from 'react-intersection-observer'
 import  { motion, useAnimation } from "framer-motion"
@@ -196,6 +197,36 @@ const Projects = ({ projectsRef }) => {
                                     <p className='font-semibold text-center'>Tech stack used:</p>
                                                      <div className='flex flex-wrap gap-2 mt-2 justify-center items-center'>
                                                          {['HTML', 'CSS', 'JavaScript', 'ReactJS', 'Node.js', 'Express.js', 'WebSocket', 'GitHub', ].map(t => (
+                                                                <img key={t} src={techBadges[t]} alt={t} title={t} className='h-6 rounded' />
+                                                         ))}
+                                                     </div>
+                                </div>
+                    </div>
+            </motion.a>
+             <motion.a className='w-full lg:w-[45%]  h-auto md:h-[520px] min-h-[480px] flex flex-col justify-between backdrop-blur-md border-5 border-[#111827] hover:border-[#2563EB]  shadow-xl rounded-2xl p-4 cursor-pointer transform transition-transform duration-300 ease-out hover:-translate-y-2 hover:shadow-2xl group'
+                    variants={{
+                    visible:  { opacity: 1, x:0 },
+                    hidden: { opacity: 0, x: 150 }
+               }}
+               animate={controls}
+               initial="hidden"
+               transition={{ duration: 0.2, ease: "easeOut"}}
+               href='https://github.com/KarlBautista/techlinic-system' 
+               target='_blank'
+               rel='noreferrer'>
+                
+                    <div className='w-full rounded-xl overflow-hidden h-1/2 md:h-[52%]'>
+                        <img src={Techclinic} alt="" className='w-full h-full object-cover' />
+                    </div>
+                    <div className='flex flex-col gap-5 items-center'>
+                        <h1 className='text-3xl font-extrabold text-center mt-5 text-[#111827]'>
+                        Techclinic (Capstone Project)
+                        </h1>
+                                <p className='font-semibold text-center'>TechClinic is a secure health record and analytics system designed for TUP Manila to efficiently manage student medical data, streamline clinic operations, and support data-driven health decisions.</p>
+                                <div className=''>
+                                    <p className='font-semibold text-center'>Tech stack used:</p>
+                                                     <div className='flex flex-wrap gap-2 mt-2 justify-center items-center'>
+                                                         {['HTML', 'CSS', 'JavaScript', 'ReactJS', 'Node.js', 'Express.js', 'Supabase', 'GitHub', ].map(t => (
                                                                 <img key={t} src={techBadges[t]} alt={t} title={t} className='h-6 rounded' />
                                                          ))}
                                                      </div>
